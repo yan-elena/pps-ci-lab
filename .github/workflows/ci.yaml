@@ -1,0 +1,12 @@
+name: pps-ci-lab
+on:
+  push:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: joschi/setup-jdk@v2.3.0
+        with:
+          java-version: 11
+      - name: Build
+        run: ./gradlew check
